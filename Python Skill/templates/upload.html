@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data</title>
+</head>
+<body>
+    <h1>Weather Data</h1>
+
+    <!-- Form Input -->
+    <form method="get" action="/weather">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Display Error if any -->
+    {% if error %}
+    <p style="color: red;">Error: {{ error }}</p>
+    {% endif %}
+
+    <!-- Display Current Weather if available -->
+    {% if current_temperature is not none %}
+    <h2>Current Weather in {{ city }}:</h2>
+    <p><strong>Temperature:</strong> {{ current_temperature }} °C</p>
+    <p><strong>Weather Description:</strong> {{ weather_description }}</p>
+    <p><strong>Wind Speed:</strong> {{ wind_speed }} km/h</p>
+    <p><strong>Humidity:</strong> {{ humidity }} %</p>
+    {% endif %}
+
+    <!-- Display Gemini Analysis -->
+    {% if gemini_response %}
+    <h3>Google Gemini Analysis:</h3>
+    <p>{{ gemini_response }}</p>
+    {% endif %}
+
+</body>
+</html>
