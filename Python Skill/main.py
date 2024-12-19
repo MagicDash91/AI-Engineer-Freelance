@@ -8,11 +8,11 @@ import logging
 import google.generativeai as genai
 
 # WeatherStack API Constants
-API_KEY = "f8bccc8fa4968b7c8baf1360a675a6a3"
+API_KEY = "*********************************"
 BASE_URL = "http://api.weatherstack.com/current"
 
 # Google Gemini API Configuration
-GEMINI_API_KEY = "AIzaSyA3-PPtMYY7sMmTiFuNKtT0DdRqgJPy8SA"
+GEMINI_API_KEY = "*****************************"
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Template renderer
